@@ -9,7 +9,6 @@
   /* Eco Green approx */
   --color-background: oklch(0.1 0 0);
   --color-foreground: oklch(0.98 0 0);
-
   --radius-xl: 1rem;
   --radius-2xl: 1.5rem;
 }
@@ -30,6 +29,7 @@
   }
 }
 
+/* Wizard styles - OUTSIDE @layer base */
 .glass {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
@@ -54,6 +54,7 @@
     radial-gradient(circle at bottom right, rgba(0, 163, 255, 0.15), transparent),
     #0A0A0A;
 }
+
 /* Fix for input fields not accepting text */
 input[type="text"],
 input[type="email"],
@@ -74,4 +75,21 @@ select:focus,
 textarea:focus {
   outline: 2px solid #3b82f6;
   outline-offset: 2px;
+}
+
+/* Ensure wizard content is visible */
+.container > div {
+  min-height: 200px;
+}
+
+button {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+/* Make sure all step content is visible */
+[class*="space-y"],
+[class*="grid"] {
+  opacity: 1 !important;
+  visibility: visible !important;
 }
