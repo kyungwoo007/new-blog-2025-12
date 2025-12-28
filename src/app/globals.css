@@ -54,3 +54,24 @@
     radial-gradient(circle at bottom right, rgba(0, 163, 255, 0.15), transparent),
     #0A0A0A;
 }
+/* Fix for input fields not accepting text */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+  position: relative;
+  z-index: 10;
+  background-color: white !important;
+  color: black !important;
+  pointer-events: auto !important;
+  user-select: text !important;
+  -webkit-user-select: text !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
