@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: oklch(0.6 0.25 25);
+  /* Hot Orange approx */
+  --color-secondary: oklch(0.6 0.2 240);
+  /* Transport Blue approx */
+  --color-accent: oklch(0.8 0.15 160);
+  /* Eco Green approx */
+  --color-background: oklch(0.1 0 0);
+  --color-foreground: oklch(0.98 0 0);
+
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+}
+
+:root {
+  --primary: #FF4D00;
+  --secondary: #00A3FF;
+  --accent: #6EE7B7;
+  --background: #0A0A0A;
+  --foreground: #F8F9FA;
+}
+
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    @apply antialiased;
+  }
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #FF4D00, #00A3FF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-bg {
+  background: radial-gradient(circle at top left, rgba(255, 77, 0, 0.15), transparent),
+    radial-gradient(circle at bottom right, rgba(0, 163, 255, 0.15), transparent),
+    #0A0A0A;
+}
